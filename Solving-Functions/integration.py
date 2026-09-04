@@ -4,7 +4,7 @@ x = 0
 #finding integral of sin(x) from 0 to 10
 def f(x):
     return np.sin(x)
-def integral(f, a, b, n = 1000):
+def integral(f, a, b, n = 10000):
     dx = np.linspace(a, b, n + 1)[1] - np.linspace(a, b, n + 1)[0]
     total = 0
     for i in range(1, n + 1):
@@ -15,7 +15,7 @@ result = integral(f, 0, 10)
 print(result)
 
 #2nd method using numpy's trapz function
-def integral_trapz(f, a, b, n = 1000):
+def integral_trapz(f, a, b, n = 10000):
     x = np.linspace(a, b, n + 1)
     y = f(x)
     return np.trapezoid(y, x)
